@@ -20,6 +20,15 @@
 - 프론트: HTML, CSS, JavaScript (CDN: Supabase JS)
 - DB: Supabase `card_flip_scores` 테이블 (시도 횟수, 완료 시간 저장)
 
+## Supabase 설정 (키 분리)
+
+- **실제 키는 저장소에 올리지 않습니다.** `config.js`는 `.gitignore`에 포함되어 있습니다.
+- **로컬 개발**: `config.example.js`를 복사해 `config.js`로 저장한 뒤, Supabase 대시보드(Project Settings > API)에서 URL과 anon key를 복사해 넣으세요.
+- **Vercel 배포**: 프로젝트 Settings > Environment Variables에 다음을 추가하세요.
+  - `SUPABASE_URL` = Supabase 프로젝트 URL
+  - `SUPABASE_ANON_KEY` = anon (public) key  
+  Build Command는 `npm run build` 로 두면 배포 시 `config.js`가 자동 생성됩니다.
+
 ## Supabase
 
 - 프로젝트: card-flip-game

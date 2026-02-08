@@ -1,0 +1,7 @@
+{
+  "name": "card-flip-game",
+  "private": true,
+  "scripts": {
+    "build": "node inject-config.js"
+  }
+}

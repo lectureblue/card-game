@@ -243,14 +243,16 @@
     </div>
   </div>
 
+  <script src="config.js"></script>
   <script>
-    const SUPABASE_URL = 'https://ntvtduhaomjdrsdptleu.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im50dnRkdWhhb21qZHJzZHB0bGV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTMwMDQsImV4cCI6MjA4NjA2OTAwNH0.YD0pL7D36XeDzr49I6g2-9r2pfHeoIQ8oGZ-19WX1qA';
     function getSupabase() {
       if (window.supabaseClient) return window.supabaseClient;
+      var url = typeof window.SUPABASE_URL !== 'undefined' ? window.SUPABASE_URL : '';
+      var key = typeof window.SUPABASE_ANON_KEY !== 'undefined' ? window.SUPABASE_ANON_KEY : '';
+      if (!url || !key) return null;
       try {
         if (window.supabase) {
-          window.supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          window.supabaseClient = window.supabase.createClient(url, key);
           return window.supabaseClient;
         }
       } catch (e) { console.warn('Supabase 로드 실패:', e); }
