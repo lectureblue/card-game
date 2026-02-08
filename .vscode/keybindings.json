@@ -1,0 +1,6 @@
+[
+  {
+    "key": "ctrl+shift+l",
+    "command": "extension.liveServer.goLive"
+  }
+]
